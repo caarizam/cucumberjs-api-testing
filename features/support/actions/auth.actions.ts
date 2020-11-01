@@ -10,17 +10,29 @@ export class AuthActions {
     async requestLogin(payload: LoginInterface) {
         let baseModel = new BaseModel();
         let authModel = new AuthModel();
+        let loginResponse: LoginResponseInterface;
         //var jsonPayload = JSON.stringify(payload);
 
-        request(baseModel.baseUrl)
+        await request(baseModel.baseUrl)
             .post(authModel.loginEndPoint)
             .set('Accept', 'application/json')
             .send(payload)
             .then(response => {
-                //console.log(response.statusCode);
-                expect(200).to.be.equal(response.statusCode);
-                setAccessToken(response.body.access_token);
+                console.log("Login Status Code: " + response.statusCode);
+                //expect(expectedStatus).to.be.equal(response.statusCode);
+                if(response.statusCode == 200){
+                    loginResponse = {status: response.statusCode, token:response.body.access_token };
+                    setAccessToken(loginResponse);
+                }else{
+                    loginResponse = {status: response.statusCode, token: "not_found" };
+                    setAccessToken(loginResponse);
+                }
             });
     }
 
+}
+
+export interface LoginResponseInterface {
+    status: number;
+    token: string;
 }

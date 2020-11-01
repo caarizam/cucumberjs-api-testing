@@ -1,0 +1,92 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "client-management;client-check-health",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Client Check health",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "The client request for login with \"charlie@yopmail.com\" and \"12gdfgf3456\"",
+            "match": {
+              "location": "features\\step_definitions\\client.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 266000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "The client should be logged",
+            "match": {
+              "location": "features\\step_definitions\\client.steps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "The client requests for \"service\" status",
+            "match": {
+              "location": "features\\step_definitions\\health.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 129000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "The response should be message \"completed\" and status \"up\"",
+            "match": {
+              "location": "features\\step_definitions\\health.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 4000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "client-management",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Client Management",
+    "tags": [],
+    "uri": "features\\E2EClientManagement.feature"
+  }
+]

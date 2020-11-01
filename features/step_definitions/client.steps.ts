@@ -1,6 +1,9 @@
 import {Given, When, Then} from '@cucumber/cucumber';
 import {LoginInterface} from '../support/models/auth.model';
-import {AuthActions} from '../support/actions/auth.actions';
+import {AuthActions, LoginResponseInterface} from '../support/actions/auth.actions';
+import { getAccessToken } from '../support/common/singleton.model';
+const chai = require('chai');
+const expect = chai.expect;
 
 let authActions = new AuthActions();
 
@@ -14,5 +17,7 @@ Given('The client request for login with {string} and {string}',
 
 When('The client should be logged',
     async () => {
-        console.log("Then step");
+        let loginResponse: LoginResponseInterface;
+        loginResponse = (await getAccessToken());
+        await expect(200).to.be.equal(loginResponse.status);
     });

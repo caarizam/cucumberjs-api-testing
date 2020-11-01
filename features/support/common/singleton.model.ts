@@ -1,11 +1,12 @@
 import {HealthInterfaceResponse} from "../models/health.model";
+import {LoginResponseInterface} from "../actions/auth.actions";
 
 
 class Singleton {
 
     private static instance: Singleton;
 
-    private accessToken: string;
+    private accessToken: LoginResponseInterface;
     private healthResponse: HealthInterfaceResponse;
 
     private constructor() { }
@@ -18,7 +19,7 @@ class Singleton {
         return Singleton.instance;
     }
 
-    public setAccessToken(accessToken: string){
+    public setAccessToken(accessToken: LoginResponseInterface){
         this.accessToken = accessToken;
     }
 
@@ -36,7 +37,7 @@ class Singleton {
 }
 
 //Access Token
-export function setAccessToken(accessToken: string){
+export function setAccessToken(accessToken: LoginResponseInterface){
     const singletonModel = Singleton.getInstance();
     singletonModel.setAccessToken(accessToken);
 }
