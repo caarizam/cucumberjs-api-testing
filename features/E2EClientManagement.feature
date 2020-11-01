@@ -1,5 +1,7 @@
 Feature: Client Management
 
-  Scenario: Client registration
+  Scenario: Client Check health
     Given The client request for login with "charlie@yopmail.com" and "12gdfgf3456"
-    Then The client should be logged
+    And The client should be logged
+    When The client requests for "service" status
+    Then The response should be message "completed" and status "up"

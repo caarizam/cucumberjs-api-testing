@@ -3,16 +3,14 @@ import {BaseModel} from '../models/base.model';
 import { setAccessToken } from '../common/singleton.model';
 const chai = require('chai');
 const expect = chai.expect;
-const assert = require('assert');
-
 const request = require('supertest');
 
 export class AuthActions {
 
-    requestLogin(payload: LoginInterface) {
+    async requestLogin(payload: LoginInterface) {
         let baseModel = new BaseModel();
         let authModel = new AuthModel();
-        var jsonPayload = JSON.stringify(payload);
+        //var jsonPayload = JSON.stringify(payload);
 
         request(baseModel.baseUrl)
             .post(authModel.loginEndPoint)

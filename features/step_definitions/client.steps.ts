@@ -1,4 +1,4 @@
-import {Given, When, Then} from 'cucumber';
+import {Given, When, Then} from '@cucumber/cucumber';
 import {LoginInterface} from '../support/models/auth.model';
 import {AuthActions} from '../support/actions/auth.actions';
 
@@ -12,7 +12,7 @@ Given('The client request for login with {string} and {string}',
 
     });
 
-Then('The client should be logged',
+When('The client should be logged',
     async () => {
         console.log("Then step");
     });
