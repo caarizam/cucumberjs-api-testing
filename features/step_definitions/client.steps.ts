@@ -8,7 +8,7 @@ const expect = chai.expect;
 let authActions = new AuthActions();
 
 Given('The client request for login with {string} and {string}',
-    async (username: string, password: string) => {
+    async function(username: string, password: string) {
 
         let payload: LoginInterface = {username: username, password: password};
         await authActions.requestLogin(payload);
@@ -16,8 +16,9 @@ Given('The client request for login with {string} and {string}',
     });
 
 When('The client should be logged',
-    async () => {
+    async function() {
         let loginResponse: LoginResponseInterface;
         loginResponse = (await getAccessToken());
         await expect(200).to.be.equal(loginResponse.status);
+        this.log("->Status: " + loginResponse.status);
     });

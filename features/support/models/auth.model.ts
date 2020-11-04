@@ -5,7 +5,7 @@ export class AuthModel {
     signUpEndPoint: string;
 
     constructor() {
-        this.loginEndPoint = "/auth";
+        this.loginEndPoint = "/auth/login";
         this.signUpEndPoint = "/api/user";
 
     }

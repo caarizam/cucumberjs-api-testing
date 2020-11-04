@@ -11,7 +11,6 @@ export class AuthActions {
         let baseModel = new BaseModel();
         let authModel = new AuthModel();
         let loginResponse: LoginResponseInterface;
-        //var jsonPayload = JSON.stringify(payload);
 
         await request(baseModel.baseUrl)
             .post(authModel.loginEndPoint)

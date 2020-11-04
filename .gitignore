@@ -11,6 +11,9 @@ lerna-debug.log*
 *.steps.d.ts
 *.d.ts
 
+reports/html/*.*
+reports/json/*.*
+
 .idea/
 
 # Diagnostic reports (https://nodejs.org/api/report.html)

@@ -15,10 +15,10 @@ export class CucumberReportExtension {
         jsonFile: CucumberReportExtension.jsonFile,
         output: CucumberReportExtension.htmlDir + "/cucumber_report.html",
         reportSuiteAsScenarios: true,
+        scenarioTimestamp: true,
         metadata: {
             "Test Environment": "Sample API Testing",
-            "Browser": "Chrome Version 81.0.4044.138 (Official Build) (64-bit)",
-            "Platform": "Windows 10",
+            "Platform": "REST API with Flask",
             "Executed": "Local"
         }
     };
