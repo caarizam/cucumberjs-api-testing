@@ -9,4 +9,4 @@ COPY . .
 
 
 EXPOSE 8888
-CMD [ "npm", "test" ]
+CMD [ "npm", "verify" ]

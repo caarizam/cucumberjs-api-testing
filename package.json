@@ -5,7 +5,7 @@
   "main": "config.js",
   "scripts": {
     "test:build": "tsc",
-    "verify": "cucumber-js features/",
+    "verify": "cucumber-js features/ --require-module ts-node/register --require features/step_definitions/**/*.ts ",
     "test": "cucumber-js features/ --require-module ts-node/register --require features/step_definitions/**/*.ts -f message:reports/json/cucumber_report.ndjson "
   },
   "repository": {
